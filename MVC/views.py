@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from flask import render_template, redirect, request
 from MVC import app, db
 from MVC.models import Course
