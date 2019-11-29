@@ -1,6 +1,4 @@
-from flask import Flask, render_template
-
 from MVC import app
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
