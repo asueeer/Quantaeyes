@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="https://astgram-images.oss-cn-qingdao.aliyuncs.com/xidian.png" alt="" width="72" height="72">
+    <h2>提交好课</h2>
+    <p class="lead">在下面的表格里填写课程的信息。</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">课程信息</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">课程名</label>
+            <input type="text" class="form-control" name="course_name" id="course_name" placeholder="课程名" value="" required>
+            <div class="invalid-feedback">
+              请填写课程名称。
+            </div>
+          </div>
+        </div>
+
+                  <div class="mb-3">
+          <label for="address">大学</label>
+          <input type="text" class="form-control" name="university" id="university" placeholder="开课的大学" required>
+          <div class="invalid-feedback">
+            Please enter.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="address">开课老师</label>
+          <input type="text" class="form-control" name="teacher" id="teacher" placeholder="开课老师" required>
+          <div class="invalid-feedback">
+            Please enter.
+          </div>
+        </div>
+
+                  <div class="mb-3">
+          <label for="address">课程链接</label>
+          <input type="text" class="form-control" name="course_url" id="teacher" placeholder="课程链接" required>
+          <div class="invalid-feedback">
+            Please enter.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">课程图片</label>
+          <input type="text" class="form-control" name="url" id="address" placeholder="请输入url链接" required>
+          <div class="invalid-feedback">
+            Please enter.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">课程详情</label>
+          <textarea class="form-control" name="details" id="content" rows="10" placeholder="请填写课程详情，支持markdown编辑" required></textarea>
+          <div class="invalid-feedback">
+            Please enter.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">开课时间（YYYY/MM/DD）</label>
+          <input type="text" class="form-control" name="open_date" id="address" placeholder="2019/10/30" required>
+          <div class="invalid-feedback">
+            Please enter.
+          </div>
+        </div>
+        <hr class="mb-4">
+
+        <button class="btn btn-primary btn-lg btn-block" onclick="form=document.getElementById('courseForm');form.action='/upLoadNewCourse/';" type="submit">提交信息</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2020 Quantaeyes Inc.</p>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://v4.bootcss.com/docs/4.3/dist/js/bootstrap.bundle.js"></script>
+        <script src="https://v4.bootcss.com/docs/4.3/examples/checkout/form-validation.js"></script></body>
+
+
+{% endblock%}
