@@ -14,7 +14,7 @@ def init_database():
     db.drop_all()
     db.create_all()
 
-    for i in range(100):
+    for i in range(1):
         course_name = "高等数学（一）"
         url ="http://1.im.guokr.com/w4dTx9KUGsJH-v1pLjMkRAGD4vNg8ffjQRDQO4eTPOGqAQAA8AAAAEpQ.jpg?imageView2/1"
         teacher = "朱健民"

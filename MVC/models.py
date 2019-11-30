@@ -1,4 +1,8 @@
+# -*- encoding=UTF-8 -*-
+import codecs
 from datetime import datetime
+
+import markdown
 
 from MVC import db
 
@@ -10,7 +14,7 @@ class Course(db.Model):
     course_name = db.Column(db.String(80))
     teacher = db.Column(db.String(80))
     open_date = db.Column(db.String(80))
-    course_url = db.Column(db.String(80))
+    course_url = db.Column(db.String(512))
     university = db.Column(db.String(80))
     details = db.Column(db.String(10000))
     status = db.Column(db.String(10))
@@ -22,7 +26,7 @@ class Course(db.Model):
         self.url = url
         self.course_name = course_name
         self.open_date = open_date
-        self.details = details
+        self.details = markdown.markdown(details)
         self.teacher = teacher
         self.status = "待审核"
         self.course_url = course_url
@@ -36,3 +40,6 @@ class Course(db.Model):
 
     def __repr__(self):
         return '<Course %d %s>' % (self.id, self.url)
+
+
+
