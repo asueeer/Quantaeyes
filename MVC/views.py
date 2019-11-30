@@ -1,10 +1,6 @@
-# -*- encoding=UTF-8 -*-
-
-
 from flask import render_template, redirect, request
 from MVC import app, db
 from MVC.models import Course
-import codecs, markdown
 
 @app.route('/upLoadNewCourse/', methods={"GET", "POST"})
 def upLoadNewCourse():
@@ -36,11 +32,11 @@ def upLoadNewPaper():
                     course_url=course_url, university=university, type="paper")
     db.session.add(course)
     db.session.commit()
-    return "上传成功！！ 返回首页：http://47.95.6.117/"
+    return "上传成功！！"
 
 
 @app.route('/')
-def index():
+def course_detail():
     courses = Course.query.order_by(db.desc(Course.id)).limit(4).all()
     papers = courses[0:3]
     print(len(papers))
@@ -58,7 +54,7 @@ def post_paper():
 
 
 @app.route('/course_detail/<int:course_id>')
-def course_detail(course_id):
+def index(course_id):
     course = Course.query.get(course_id)
     if course is None:
         return redirect('/')
