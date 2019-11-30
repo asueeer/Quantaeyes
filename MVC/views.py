@@ -1,3 +1,6 @@
+# -*- encoding=UTF-8 -*-
+
+
 from flask import render_template, redirect, request
 from MVC import app, db
 from MVC.models import Course
@@ -16,7 +19,7 @@ def upLoadNewCourse():
                     course_url=course_url, university=university, type="course")
     db.session.add(course)
     db.session.commit()
-    return "上传成功！！"
+    return "上传成功！！返回主页：http://47.95.6.117/"
 
 
 @app.route('/upLoadNewPaper/', methods={"GET", "POST"})
